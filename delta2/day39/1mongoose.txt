@@ -1,0 +1,231 @@
+Mongoose 
+mongoos use to control mongodb using js code
+
+A library that create a connection between MongoDB and node.js javascript runtime Environment
+
+it is an ODM (object Data Modeling) library
+
+
+lecture 2 installition 
+official documentation mongoosejs.com
+for setup 
+
+
+
+lecture 3
+schema  (overall structure of db )
+schema defines the shape of the documents within that collection
+
+const userScheme = new mongoos.Schema({
+    name: String,
+    email: String,
+    age: Number 
+})
+
+
+
+
+
+lecture 4
+Modeles 
+Modele in mongoos is a class with which we construct documents.
+const User = mongoos.model("user", userScheme);
+
+
+
+
+
+
+
+
+
+
+
+lecture 5
+INSERTING ONE 
+// actual user(model) is class to make obj of of class with new key word 
+const user1 = new User ({name: "Adam", email: "adam@gmail.com", age: 48});
+const user2 = new User ({name: "eve", email: "eve@gmail.com", age: 49});
+
+//if create not save automactically so use save method
+//only create in memory 
+// to check run using node(repl) than write (.load index.js ) tha print user1 add id automatically it mean that create in memory but not store in db 
+
+user1.save()   //to save in DB 
+user2.save() // to save in DB
+
+node terminal and than write .load index.js file show 
+
+
+
+
+
+
+
+lecture 6 
+
+INSERT
+INSERTING multiple
+User.insertMany([
+    {name: "khan", email: "evaa@gmail.com", age: 39},
+    {name: "jan", email: "evebb@gmail.com", age: 7},
+    {name: "love", email: "evecc@gmail.com", age: 40}
+    
+]).then((data) => {
+    console.log(data);
+})
+
+Note very very important 
+Mongoose uses Operation Buffering
+mongoose lets you start using your Modeles immediatly, without
+waiting for mongoose to establish a connection to MangoDB
+
+
+
+
+
+
+
+lecture 7
+model.find() // returns a Query object(thennable)
+*Mongoose Query are not promises. But they hava a .then()
+User.find().then((data)=>{
+    console.log(data);
+});
+
+
+user.find({age: {$gte: 47}}).then((data)=>{
+    console.log(data);
+});
+
+Model.findOne() //returns a single result
+User.findOne({age: {$gte:47}}).then((dtat)=>{
+    console.log(data);
+});
+
+
+Model.findById() //commonly used  By user use small .. so  use B capital 
+
+
+
+
+
+
+
+
+lecture 8
+UPDATE
+model.updateOne();
+
+//no need to use set oprator as in use in mongoshell
+User.undateOne({name: "Bruce"}, {age: 49}).then((res)=>{
+    console.log(res)
+})
+
+Model.updateMany({age: {$gt: 45}}, {age: 45}).then((res)=>{
+    console.log(res);
+})
+// the returns some meta data so use other method as lecture 9
+
+
+
+
+
+lecture 9 
+UPDATE
+Model.findOneAndUpdate()
+User.updateMany({age: {$gt:45}}, {age: 45}).then((res)=>{
+    console.log(res);
+});
+// the returns original document 
+
+// optional argument bydfult is false make it true
+
+User.findOneAndUpdate({name: "Tony"}, {age:60}, {new: true}).then(date)=>{
+    console.log(data);
+};
+
+Model.findByIdAndUpdate();
+
+
+
+
+
+
+
+lecture 10 
+DELETE
+
+Model.deleteOne() // returns count 
+User.deleteOne({name:"Adam"}).the((res)=>{
+    console.log(res);
+});
+
+
+Model.deleteMony() // returns count 
+User.deleteMony({age: {$gt: 40}}).then((res)=>{
+    console.log(res);
+});
+
+
+Try YourSelf 
+Model.findByIdAndUpDelete()
+model.findOneAndUpDelete()
+
+
+
+lecture 11
+Schema Validations (apply rule to validate)
+Basically, Rule for Schema 
+// its like sql primry key etc constraint 
+const bookSchema = mongoos.Schema({
+    title: {
+        type : String,
+        required: true,
+    },
+    author : {
+        type : String,
+    },
+    price: {
+        type: Number,
+    },
+});
+
+
+
+
+lecture 12 
+schema Validations
+schemaType Options
+const bookSchema = new mongoose.Schema({
+title : {
+    type: String,
+    required : true,
+},
+author: {
+    type : Number,
+    min : [1, "please enter a valid price"],// custom err = ?
+},
+discont: {
+    type : Number,
+    default : 0,
+},
+ genre: [String],
+ category : {
+    type :String,
+    enum : [ "fictions", "non-fiction"], // base on specific number only not other ecept
+ },
+})
+
+
+
+lecture 13 
+schema Validations
+with UPDATE
+(see in detail agian)
+// if you try to validate during update so use optional argument  { runValidators: true} to check schema 
+
+// if you try update so not use schema validate schema Validations only wrok during INSERTIion time so validate for updatation also pass optional argument 
+
+//custom error ?
+err.errors.price.properties.message

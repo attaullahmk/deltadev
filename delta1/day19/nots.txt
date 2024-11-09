@@ -1,0 +1,122 @@
+function type 
+1. Function Declaration
+This is the most common way to define a function in JavaScript using the function keyword.
+Function declarations are hoisted, meaning they can be called before they are declared in the code.
+
+function greet() {
+  console.log('Hello!');
+}
+
+
+
+2. Function Expression
+In this case, a function is assigned to a variable, and it’s called using that variable.
+Function expressions are not hoisted.
+js
+Copy code
+const greet = function() {
+  console.log('Hello!');
+};
+
+
+
+3. Arrow Function (ES6)
+Arrow functions provide a more concise syntax and they do not have their own this context (they inherit this from the parent scope).
+They are commonly used in callbacks and functional programming.
+js
+Copy code
+const greet = () => {
+  console.log('Hello!');
+};
+
+
+
+4. Anonymous Function
+These are functions without a name and are often used as arguments to other functions or immediately invoked.
+js
+Copy code
+setTimeout(function() {
+  console.log('Hello after 2 seconds');
+}, 2000);
+
+
+5. Immediately Invoked Function Expression (IIFE)
+These functions are executed as soon as they are defined.
+Often used to create private scopes and avoid polluting the global namespace.
+js
+Copy code
+(function() {
+  console.log('IIFE executed!');
+})();
+
+
+
+
+6. Constructor Function
+Functions used with the new keyword to create objects.
+These functions follow naming conventions with capitalized names.
+js
+Copy code
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const person1 = new Person('John', 30);
+
+
+
+7. Generator Function
+Generator functions are declared using the function* syntax and allow you to define an iterative algorithm that can be paused and resumed.
+They use the yield keyword.
+js
+Copy code
+function* generateNumbers() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = generateNumbers();
+console.log(gen.next().value); // 1
+
+
+
+
+
+
+
+8. Async Function (ES8)
+Async functions allow you to write asynchronous code in a cleaner and more readable way.
+They return a Promise and use await to pause execution until the promise resolves.
+js
+Copy code
+async function fetchData() {
+  const response = await fetch('https://api.example.com/data');
+  const data = await response.json();
+  console.log(data);
+}
+
+
+
+
+
+
+
+
+9. Callback Function
+Functions that are passed as arguments to other functions and are called after a specific event or operation occurs.
+js
+Copy code
+function loadData(callback) {
+  setTimeout(() => {
+    console.log('Data loaded');
+    callback();
+  }, 1000);
+}
+
+loadData(() => console.log('Callback executed'));
+
+
+
+Each of these function types serves different purposes, depending on the use case in your JavaScript code.

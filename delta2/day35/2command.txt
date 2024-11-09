@@ -1,0 +1,195 @@
+lecture 7 
+SQL case-insensitive 
+Our 1st DataBase 
+
+CREAT DATABASE db_name;
+DROP DATABASE db_name;
+
+USE db_name; 
+(if you want to creat table in database first use it in sql workbench)
+
+
+
+
+
+
+
+
+lecture 8 
+Our 1st Table
+
+//syntax to create a table
+create Table TableName(
+    columnname1 type  constraint,
+    columnname2 type  constraint,
+    columnname3 type constraint
+);
+
+
+//as  create a table
+CREATE TABLE student(
+    Roll_No int,
+    name varchar(10),
+    age int
+);
+
+
+//insert data into table 
+INSERT INTO student VALUES 
+(101, "kapra", 12),
+(102, "khan", 13);
+
+
+
+//to check data of table 
+SELECT * FROM student ;
+
+
+
+
+
+
+
+//lecture 9 
+DataBase Queries / SQL command (operation to perform)
+CREATE DATABASE db_name;
+CREATE DATABASE IF NOT EXISTS db_name;  // show warning but not give error
+
+DROP DATABASE db_name;
+DROP DATABASE IF EXISTS db_name;
+
+SHOW DATABASES;
+SHOW TABLES;
+
+
+
+
+
+lecture 10
+table Queries
+creat  INSERT update alter truncate delete
+
+Our 1st Table
+
+//syntax to create a table
+create Table TableName(
+    columnname1 type  constraint,
+    columnname2 type  constraint,
+    columnname3 type constraint
+);
+
+
+//as  create a table
+CREATE TABLE student(
+    Roll_No int,
+    name varchar(10),
+    age int
+);
+
+
+
+
+
+lecture 11
+
+constraint
+rules for data in the table 
+NOT NULL: columns cannot have a null value 
+UNIQUE : all value in column are different
+DEFAULT : sets the DEFAULT value of a column
+CHECK :  it can limit the values allowed in a column
+
+CREATE TABLE student(
+    Roll_No int NOT NULL,
+    email varchar UNIQUE,
+    followers INT DEFAULT 0,
+    name varchar(10),
+    age int,
+    constraint age_check CHECK (age >= 13) 
+    // name is optional
+    // constraint  CHECK (age >= 13)
+);
+
+
+
+slary INT DEFAULT 25000
+
+constraint age_check CHECK (age >= 18 AND city = "delhi") 
+
+
+
+
+
+lecture 12
+constraint 
+PRIMARY KEY :  makes a column unique and not null but used only for one 
+
+CREAT TABLE temp (
+    id INT NOT NULL,
+    PRIMARY KEY (id)
+);
+or 
+CREAT TABLE temp (
+    id INT PRIMARY KEY NOT NULL,
+    
+);
+
+
+PROEIGN KEY : prevent actions that would destroy links between tables 
+//foreign key is PRIMARY key of other table 
+CREAT TABLE temp (
+    cust_id int,
+    POREIGN KEY (cust_id) references temp(id)
+);
+
+
+reverse engineering  workbench -> database show the erd of table
+
+
+
+
+
+
+
+
+lecture 13
+What are keys ?
+keys are special columns in the table
+
+PRIMARY KEY
+ It is a column(or set of column) in a table that uniquely identifies each row. (a unique id ) There is only 1 PK and it should be NOT unll.
+
+
+ foreign KEY
+ A foreign key is a column (of set of columns) in a table that refers to the primary key in another table .
+ FKs can have duplicate and null values. 
+ there can be multiple FKs.
+
+
+
+
+lecture 14 
+Table Queries
+insert into table
+// order is important for insert data... 
+INSERT INTO TableName (columnname1, columnname2)
+VALUES (col1_v1, col2_v1),
+(col1_v2, col2_v2);
+
+//if you enter duplicate value for primary key the will give erorr (if you vailate the constraint than give erorr)
+
+
+
+
+lecture 15 
+SELECT command
+select and show data from the DB
+
+syntax
+SELECT col1, col FROM TableName;
+
+syntax (to show all)
+SELECT * FROM TableName;
+
+show distinct (mean of same thing )
+SELECT DISTINCT age FROM TableName;

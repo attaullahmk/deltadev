@@ -1,0 +1,82 @@
+           #########PROCESS IN NODEJS ##########################
+The `process` object in Node.js is a global object that provides information and control over the current Node.js process. It’s a key part of the Node.js runtime environment and is used for various tasks related to the execution and management of the process. Here are some common uses of the `process` object:
+
+*****1. Accessing Command-Line Arguments*****
+- Usage: You can retrieve arguments passed to the script when it is executed from the command line.
+- Example:
+  ```javascript
+  // Run with: node script.js arg1 arg2
+  console.log(process.argv); // Outputs: [ '/path/to/node', '/path/to/script.js', 'arg1', 'arg2' ]
+```
+
+### **2. Environment Variables:**
+- **Usage:** Access and manage environment variables that are available to the Node.js process.
+- **Example:**
+  ```javascript
+  console.log(process.env); // Outputs environment variables as an object
+  console.log(process.env.NODE_ENV); // Access a specific environment variable
+  ```
+
+### **3. Current Working Directory:**
+- **Usage:** Get or set the current working directory of the Node.js process.
+- **Example:**
+  ```javascript
+  console.log(process.cwd()); // Outputs the current working directory
+  ```
+
+### **4. Process Exit and Termination:**
+- **Usage:** Gracefully terminate the process or handle process exit events.
+- **Example:**
+  ```javascript
+  process.exit(0); // Exit the process with a status code of 0 (success)
+  
+  process.on('exit', (code) => {
+    console.log(`Process exited with code: ${code}`);
+  });
+  ```
+
+### **5. Handling Signals:**
+- **Usage:** Listen for and handle system signals (e.g., termination signals like SIGINT).
+- **Example:**
+  ```javascript
+  process.on('SIGINT', () => {
+    console.log('SIGINT signal received.');
+    process.exit();
+  });
+  ```
+
+### **6. Process Uptime:**
+- **Usage:** Get the amount of time the Node.js process has been running.
+- **Example:**
+  ```javascript
+  console.log(`Process uptime: ${process.uptime()} seconds`);
+  ```
+
+### **7. Memory Usage:**
+- **Usage:** Monitor the memory usage of the Node.js process.
+- **Example:**
+  ```javascript
+  console.log(process.memoryUsage()); // Outputs memory usage statistics
+  ```
+
+### **8. Handling Standard Input/Output:**
+- **Usage:** Interact with the standard input, output, and error streams.
+- **Example:**
+  ```javascript
+  process.stdout.write('Hello, World!\n'); // Write to standard output
+  process.stdin.on('data', (data) => {
+    console.log(`Received input: ${data}`);
+  });
+  ```
+
+### **9. Platform and Architecture Information:**
+- **Usage:** Get information about the operating system and architecture on which the Node.js process is running.
+- **Example:**
+  ```javascript
+  console.log(`Platform: ${process.platform}`); // e.g., 'linux', 'darwin', 'win32'
+  console.log(`Architecture: ${process.arch}`); // e.g., 'x64', 'arm'
+  ```
+
+### **Summary:**
+
+The `process` object in Node.js provides various methods and properties that allow you to interact with and control the Node.js process. It is essential for managing runtime behavior, accessing environment variables, handling input/output, and dealing with process-specific events and information.

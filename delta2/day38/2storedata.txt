@@ -1,0 +1,169 @@
+lecture 2
+BSON Data 
+Binary JSON 
+BSON vd JSON formate =?
+JSON ->1) textbased(parsing is difficult) 2) space inefficient 3) data store in key value pair 
+
+mongodb store data in BSON formate
+BSON have more data type 
+
+JSON incoding utf-8 while BSON Binary incoding
+BSON(mongo self convert data into BSON formate i give in js obj formate(JSON formate)) data read only machine while JSON data read human
+
+
+
+
+
+lecture 3
+collections
+DOCUMENT : mongo store data in form of DOCUMENT (BSON docs)
+collection: mangoDB store documents in collection.( 
+    table(collection) in sql while document is row(stor data of one person))
+
+
+
+
+
+lecture 4 
+show collections  //command show collection in db
+
+insert in DB   // read mongodb.com/document/crud on google
+insertOne 
+
+db.collection.insertOne()   
+db.collection.insertMany() 
+// inserts a single document into a collection.
+
+// if insert data atumatically create collection
+
+
+db.student.insertOne({name: "adam", marks: 79})
+
+ insertedId: ObjectId('662fff9b6f85c3879646b799')
+ // data insert in mongodb the create automatically id which are unique no create manually 
+
+db.student.find()  //show data of collection
+
+
+if a collection does not exist, MongoDB creates the collection when you first store data for that collection. 
+
+no need for schema in mongodb as sql table  add different document in one collection(but best practice to insert same data in each document of collection)
+
+
+
+
+
+
+
+
+lecture 5
+insert in DB
+insertMany (array of documents)
+db.student.insertMany([{name: "bob", marks:65}, {name:"eve", city: "Delhi"}]);
+
+
+db.collection.insertMany()  // inserts multiple document into a collection it onece.
+
+
+
+
+
+
+
+
+
+lecture 6
+find in DB
+db.collection.find() // returns everything
+for specific queries 
+// return curssor for find
+db.collection.find({key: value}) // first which match
+
+findOne returns the actual value while find return curssor(refernce to oringinal) . curssor is important while use loop on data(obj form) but oringinal data in array than obj form 
+
+db.collection.findOne({key:value})  //give one value form for same conditon value(oringinal)
+
+
+
+
+
+lecture 7
+find in db (conditon(operator) base)
+Query operators
+
+Q.finde student where marks>75
+key will be operator
+db.student.find({marks: {$gt:75}})
+
+Q.find students who live in Delhi or mumbai
+
+db.student.find({city: {$in: ["Delhi", "mumbai"]}})
+
+Q.find student who scored > 75 or live in Delhi 
+db.student.find({$or:[{marks:{$gt: 75}}, {city: "Delhi"}]} )
+
+//the value in mongodb is case-sensitive Delhi and delhi different
+
+go this link for detail -> https://www.mongodb.com/docs/manual/reference/operator/query-comparison/
+
+
+
+
+
+lecture 8
+google update operator 
+
+update in DB
+updateOne
+db.collection.updateOne( )  // update at most a single document that match a specific filter even thaugh multiple document may match the specific filter.
+
+db.collection.Update(<filter>, <update> , <option>)
+
+db.student.updateOne({name:"adam"}, {$set: {marks:99}})
+
+
+
+update operator
+$addFields
+$set
+$project
+$unset
+$replaceRoot
+$replacWith
+
+
+db.collection.updateeMany()  //update all documents that match a specific filter.
+
+db.collection.replaceOne()  // replaceOne at most single document that match a specified filter even though multiple documents may match the specified filter.
+
+with replace data change while id remain same (not change )
+
+
+
+
+
+lecture 9 
+Nesting
+
+{ _id: ObjectId('6630c8e84ea754491146b79b'),
+ naem: 'we',
+ Performance: { Roll: 23} 
+ } 
+
+ to find  Nesting write in string form 
+ db.student.findOne({"Performance.Roll": 23 })
+
+
+
+
+lecture 10 
+ Delete in DB
+deleteOne
+db.collection.deleteOne(<filter>, <option>)
+
+
+deleteMany
+db.collection.deleteMany(<filter>, <option>)
+db.dropDatabase() // delete database
+
+db.student.deleteMany({}) // Delete all if no condition set 

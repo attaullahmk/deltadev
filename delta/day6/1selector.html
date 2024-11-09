@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector</title>
+    <style>
+        /* first two not use  */
+        /* lecture 3 */
+        /* universal selector  */
+        /* universal selector apply all the element in the page  */
+
+        *{
+            margin:  0px;
+        }
+
+        /* leacture 4  */
+        /* Element selector  */
+        /* selects all the element of the same type  */
+        h1{
+            columns: red;
+        }
+        /* lecture 8 */
+        /* Descendant Selector  */
+        /* Descendant Selector  */
+
+        /* eg 
+        selects all paragraphs inside divs */
+        
+
+        /* descendent selector  */
+        div p {
+            color: yellow;
+        }
+        p>div>.cls>#ide{
+            background-color: gainsboro;
+        }
+
+
+
+        /* lecture 9  */
+        /* Adjacent Sibling Combinator  */
+        /* eg Heading3 that comes immediataly after any paragraph  */
+
+        p + h4{
+            color:  red ;
+        }
+
+        /* lecutre 10  */
+        /* Child Combinator  */
+        /* eg  selects all buttons which are direct children of spans  */
+
+        div >p{
+            background-color: blue;
+        }
+
+
+
+                /* lecutre 11  */
+        /* Attribute Selector  */
+        /* Selects elements based on the presence or value of a given attribute  */
+
+        p[class = "child"]{
+            border: 2px solid green;
+        }
+        /* this is also work  */
+        p[class]{
+            color: rgb(165, 42, 42);
+        }
+
+
+        /* Pseudo Class  */
+        /* a keyword added to a selector that specifies a special state of the selected element(s) */
+
+        /* :hover
+        :active
+        :checked
+        :nth-of-type() */
+
+        /* this is very amizing  */
+
+        li:nth-of-type(2n){
+            background-color: brown;
+        }
+
+
+        /* pseudo Element  */
+        /* A keyword added to a selector that lets you style a specific of the selected element (s)  */
+
+        /* ::first-letter
+        ::first-line
+        ::selection */
+
+        p::first-letter{
+            text-transform: capitalize;
+            color: rebeccapurple;
+        }
+
+
+
+        /* 15 lecture  */
+        /* CSS; Casecading stylesheets  */
+        /* what is casecade in CSS */
+        /* the CSS casecade algorithm's job is to  select CSS declarations in order to determine the correct values for CSS properties */
+
+        h3{
+            background-color: red;
+        }
+        h3{
+            background-color: beige;
+            /* final will apply */
+        }
+
+        /* Selector specificity */
+        /* what is specificity */
+        /* specificity is an algorithm that calculate the weight that is applid to a a given CSS declaration.  */
+        /* it mean target element with different selector which one property will be applid */
+
+        /* id> class, attribute and pesudo-class > element and pesude-elemnt  */
+
+        /* more selcetor use best > less slector  */
+
+        /* if specificity is same => casecading  */
+        /* if hover in selector in css show the specifty of an elemnt  */
+
+
+
+
+        /* inline specificity  */
+        /* inline styles are more specific than id  */
+        /* inline > id > clss> element  */
+        /* Key Points:
+        Inline styles > ID selectors > Class, attribute, pseudo-class selectors > Element, pseudo-element selectors.
+        If two selectors have the same specificity, the rule that appears last in the CSS is applied (known as the "cascade").
+         Important rule (!important) can override specificity, but it should be used sparingly as it makes debugging harder. */
+
+
+
+
+        /* 17 */
+        /* !important  */
+        /* to show the most specific thing in document  */
+        /* the will never change  */
+        h3{
+            background-color: orange !important;
+        }
+
+
+
+
+        /* Inheritance in CSS  */
+        /* input and butten element not inherent property from his parrant by defult  */
+        button{
+            background-color: inherit;
+            
+        }
+
+        /* width height border etc not inherit */
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+    </style>
+</head>
+<body>
+    <h1>selector</h1>
+    <div>
+        <div>
+            <p class="child">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sed accusamus vel aspernatur, ex rem consequuntur, dolores, temporibus repudiandae possimus deleniti similique nostrum ad perspiciatis quas iste voluptates dolorum fuga!</p>
+        </div>
+        <div>
+            <p class="child">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati distinctio impedit iste et ipsa accusantium suscipit hic asperiores dolor maiores. Facilis, a. Aperiam eligendi, temporibus odit nihil facilis sed ut?
+            </p>
+            <h4>thi is pk </h4>
+        </div>
+        <div>
+            <p class="child">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias quisquam dolore consequuntur omnis explicabo tempore, aut recusandae, est odit ipsam qui veniam tempora voluptate ex, necessitatibus maxime eaque corrupti minus.
+            </p>
+        </div>
+    </div>
+    <ul>
+        <li>12</li>
+        <li>234</li>
+        <li>3423</li>
+        <li>23</li>
+        <li>34</li>
+    </ul>
+
+    
+</body>
+</html>

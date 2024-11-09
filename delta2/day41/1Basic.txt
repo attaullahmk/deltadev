@@ -1,0 +1,82 @@
+major project like  (airbnb)
+
+airbnb bunisse Model =? // extra thing
+
+Getting started
+-> Database Set up
+-> REST Apis for CRUD
+
+
+
+
+
+
+
+lecture 2
+Model : listing -> place(apartment , flate, house, villa, hotal)
+-> title string
+-> description string
+-> image Url
+-> price number 
+-> location -> string
+-> country -> string
+
+create Model folder b/c if need other Model to add it 
+// create Model folder to write above Model 
+
+
+
+
+
+lecture 3 
+downlod project
+
+
+
+lecture 4 
+
+initialize Database
+create init folder to initialize data for project
+if need for next time to add data for project run the index.js file in init folder 
+
+
+
+
+lecture 5 
+create index route /listing
+
+
+lecture 6 show route 
+ num.tolocalstring("en-IN") .. ropy symbole in html 
+this for pak rupee  👇
+
+const number = 1234567.89;
+// Formatting for Pakistani Rupees
+const formattedNumber = number.toLocaleString("en-PK", {
+  style: "currency",
+  currency: "PKR",
+});
+console.log(formattedNumber); // Output: ₨1,234,567.89
+
+
+
+
+ lecture 7 
+ create : new and create route 
+
+
+ very important 
+ first listing/new route than listing/:id  b/c first check id so give error
+
+
+
+
+ lecture 8
+
+ update : edit and update route 
+
+
+
+
+lecture 9
+Delete route 

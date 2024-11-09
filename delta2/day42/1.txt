@@ -1,0 +1,3 @@
+what is ejs mate?
+all work on old project chapter 40
+npm i ejs mate 

@@ -1,0 +1,69 @@
+delta2\day40\project
+lecture 1
+basic setUp (install requirement)
+
+
+lecture 2 
+Creating the Model
+chat will have : (_id, from , to , message, created_at)
+create basic chat opretion using reastfull api update delete
+created_at is date explore more about ...
+// also explore about UTC TIME FORMATE 
+
+
+
+
+lecture 3 
+Initialize Database
+init.js
+// this is normal use for test website during development 
+
+
+lecture 4
+Chats 
+index Route
+GEt /chats // show all chats 
+
+
+lecture 5
+
+Chats new and Create Route
+GET /chats/new
+post /chats
+
+
+
+lecture 6
+
+
+
+
+lecture 7
+Using Data 
+<%+= chat.created_at.toString().spit(" ")l[4]%> <br/>
+<%+= chat.created_at.toString().split(" ").slice(0,4).join(" ") %> <br/>
+
+
+
+lecture 8
+
+Chats 
+Edit and update Route
+GET  /chats/:id/edit 
+
+
+
+lecture 9
+PUT /chats/:id 
+
+
+
+lecture 10
+
+Chats 
+Destroy Route
+DELETE  /chats/:id 
+
+
+create popop option you want to delet massege
+

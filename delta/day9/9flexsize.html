@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex sizing</title>
+    <style>
+
+      /* Flex-Sizing  */
+      /* flex-basis  */
+      /* it sets the initial main size of a flex item. */
+      /* it change the size of the main axis item .. it apply on indivale item  */
+      /* flex-basis: 100px; */
+
+
+
+
+      /* Flex-Sizing  */
+      /* flex-grow */
+      /* It specifies hwo mush of the flex container's remaining space should be assigned to the flex items main size */
+      /* flex-grow:1; */
+
+
+
+      /* flex-shrink  */
+      /* it sets the flex shrink facter of a flex item.  */
+
+      /* flex-shrik : 1; */
+
+
+
+      /* Flex shrothand */
+      /* flex-grow | flex-shrink | Flex-basis */
+      /* flex: 2 2 100px; */
+
+      /* flex-grow | flex-basis */
+      /* flex: 2 100px ; */
+
+      /* flex-grow(unitless) */
+      /* flex: 2; */
+
+      /* flex-basis */
+      /* flex:100px; */
+
+
+
+     
+     
+
+
+      #flex {
+        height: 200px;
+        background-color: gray;
+        width: 80%;
+        margin: 4px auto;
+        border: 2px solid black;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        
+      
+
+       
+      }
+     
+      #blue{
+        /* width: 400px; */
+        height: 200px;
+        align-self: flex-end;
+        flex-basis :30px;    /* it change the size of the element if size is avilable */
+        flex-grow: 1;
+        max-width: 300px;
+        /* if fixd the width the value of the flex not change if further increase */
+
+        /* also min-width */
+        
+      }
+      #red{
+        flex-grow: 2; 
+        /* this two change corresponding to the blue  */
+        /* is defult value is 1  */
+        /* 1 mean all the avilable space occupy */
+
+
+      }
+
+
+    #green{
+      /* the will decrease relative to other items */
+      /* flex-shrink: 1; */
+
+      flex: 2 300px ;
+      
+
+    }
+
+
+      
+      #flex div {
+        width: 303px;
+        height: 20px;
+
+
+      }
+
+    </style>
+  </head>
+  <body>
+    
+
+    <div id="flex">
+      <div style="background-color: red">2</div>
+      <div id="blue" style="background-color: blue">3</div>
+      <div id="green" style="background-color: green">4</div>
+      <div id="red" style="background-color: crimson">5</div>
+      <div style="background-color: yellow">6</div>
+    </div>
+  </body>
+</html>

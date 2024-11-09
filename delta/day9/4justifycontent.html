@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>justify content</title>
+    <style>
+      /* Tells how the browser distributes space between and around content items along the main-axis */
+      /* justify-content: flex-start; */
+      /* justify-content:flex-end */
+      /* justify-content: center; */
+     
+
+
+      #flex {
+        height: 200px;
+        background-color: gray;
+        width: 80%;
+        margin: 4px auto;
+        border: 2px solid black;
+        display: flex;
+        /* flex-direction: column; */
+        /* flex-direction: column-reverse; */
+        /* flex-direction: row-reverse; */
+        /* flex-direction: row; this is defult */
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        /* justify-content: center; */
+        justify-content: space-between;
+        justify-content: space-around;
+        /* justify-content: space-evenly; */
+      }
+      #flex div {
+        /* height: 200px; */
+        width: 50px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    
+
+    <div id="flex">
+      <div style="background-color: red">2</div>
+      <div style="background-color: blue">3</div>
+      <div style="background-color: green">4</div>
+      <div style="background-color: crimson">5</div>
+      <div style="background-color: yellow">6</div>
+    </div>
+  </body>
+</html>

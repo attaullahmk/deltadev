@@ -1,0 +1,16 @@
+<!-- in ejs file mixture of html and js  -->
+<%- include("includes/head.ejs") %>
+<!-- not include dot is normal use in require -->
+<body>
+    <!-- Inerpolation syntax
+ Interpolation refers to embedding expression into marked up text. -->
+    <h1>this is the home page 1 + 2</h1>
+    <h3> <%= 1+2  %></h3>  
+    <!-- final result of this tags is  html string -->
+    <!-- if write in above tag it convert into html string than render  -->
+    <h3> <%= "hi every one ".toUpperCase(); %></h3>
+    <!-- in ejs js code work to write -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta velit, ratione molestias alias tempore quis doloribus illum officia debitis hic! Dolor, similique! Error maxime totam ea, rem molestiae aperiam itaque.</p>
+    <button>click me </button>
+</body>
+</html>

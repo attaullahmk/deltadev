@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex box </title>
+    <style>
+        #container{
+            display: flex;
+            background: red;
+            border-radius: 50px;
+            
+        }
+        #container div{
+            padding: 10px 20px;
+        }
+        #flex{
+            height: 300px;
+            background-color: gray;
+            display: flex;
+            width: 80%;
+            margin: 4px auto;
+            border: 2px solid black;
+        }
+        #flex div {
+            width: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+   <h1>flex box</h1> 
+   <!-- Flexbox Direction  -->
+   <!-- it sets how flex items are placed in the flex container, along which axis and direction. -->
+   <!-- Flexbox-direction : row;   row-revese column colom-revers  -->
+
+<div id="container">
+    <div>Home</div>
+    <div>About</div>
+    <div>Blog</div>
+</div>
+
+
+<div id="flex" >
+    <div style="background-color: red;"> 2</div>
+    <div style="background-color: blue;">3</div>
+    <div style="background-color: green;">4</div>
+    <div style="background-color: crimson;">5</div>
+    <div style="background-color: yellow;">6</div>
+</div>
+
+
+</body>
+</html>

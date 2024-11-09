@@ -1,0 +1,42 @@
+chapter 42
+lecture 1 
+what is EJS Mate?
+ejsmate use for biolarplate which use almost every page like footer and navebar so that creating one time use in every ejs templete as same like include 
+
+use >>> app.engine("ejs", ejsMate);
+
+biolarplate is code which already writen to start new project. c++ , html
+
+
+
+
+
+
+lecture 2
+creating NavBar
+this also do if paste in biolarplate but best practice to include from other file to creating modularity in project easy to debug and understandible formate 
+
+
+
+
+lecture 3 
+ footer
+
+
+
+
+
+
+lecture 4 
+styling index
+image card of boostrap 
+
+
+
+
+lecture 5
+styling new listings
+
+
+
+lecture 6 and 7 styling self (use boostrap)

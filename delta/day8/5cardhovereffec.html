@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hover effect</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+      .card {
+        width: 200px;
+        height: 300px;
+        border: 2px solid black;
+        display: inline-block;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 19px  rgb(164, 28, 28);
+      }
+      .desc{
+        padding: 0px 25px;
+      }
+      img {
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+      }
+      .card:hover{
+        background-color: rgb(177, 188, 199);
+        box-shadow: 7px 4px 18px rgba(23, 23, 138, 0.018);
+        transform: scale(1.1);
+        transition: 0.8s;
+      }
+    </style>
+  </head>
+  <body>
+    
+      <div class="card">
+        <img src="img.png" alt="" />
+        <div class="desc">
+          <h3>me khan</h3>
+          <p>web developer</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="img1.png" alt="" />
+        <div class="desc">
+          <h3>jan</h3>
+          <p>web desinger</p>
+        </div>
+      </div>
+    
+  </body>
+</html>

@@ -1,0 +1,60 @@
+Our Ist DataBase: SQL
+MySQL -> DataBase   
+SQL -> language
+
+MySQL(database) is a folder to store data while SQL is use to accessed that folder
+using SQL to do CRUD(operation )in DataBase
+
+Wha is a DataBase ?
+It is a collection of interrelated  data in a format that can be easily accessed.
+
+Why DataBase?
+* can store larage data
+* feature like security, scalability(if user increase) etc.
+* Easier to insert, update or delete , search data
+
+
+note : dbms is covers on db .. sql use in dbms for crud operation
+
+
+
+
+lecture 2 
+SQL v/s NoSQL 
+
+SQL: Relational DataBase (data stored in Tables(relation)).
+eg - MySQL , Oracle, postgreSQL etc, 
+
+NoSQL: Non Relational DataBase(data stored in document/key-val/graphs etc.)
+eg - MongoDb , Cassandra, Neo4j etc. 
+
+
+
+
+lecture 3
+
+SQL (Structured Query language)
+SQL is a programming language used to interact with relational DataBase.
+
+
+
+
+
+lecture 4
+what is Tables in SQL
+columns -> design(schema) (id, name ,email)
+rows -> tuple(instance)
+
+install
+MySQL server
+MySQL workbench
+
+
+
+
+lecture 5  installition
+go-> www.mysql.com  -> downlod -> scroll -> mysql communityGPU downlod  -> MySQL installar for window -> no sign downlod
+
+
+lecture 6 installition (mac)
+

@@ -1,0 +1,25 @@
+mongo db is no-sql db
+if you learn mongo db take 30 to 40 hours to master
+
+the shell
+mongosh // to start
+use college // to create and use new database called "collage"
+if exist than enter into this database
+if not enter data in dbs creat using use command temprary if enter data than show if use show dbs command (make permanently)
+
+
+
+shell use for crud opretion 
+shrotcut use to clear shell -> ctrl + l 
+show mongodb command ->  help 
+show dbs 
+
+
+run some js command in mongodb => mongoshell internally recognize js command 
+1 + 2
+
+
+mongodb create by defulte temprary database is called test to store data ..
+
+
+command db use to show current database

@@ -1,0 +1,16 @@
+<%- include("includes/head.ejs") %>
+
+<body>
+    <!-- Math.floor(Math.random() *6) +1  -->
+    <h1>Dice gave value: <%= diceVal%></h1>
+    
+    <% if(diceVal ==6) { %>
+        <!-- it is normal tag but it execute on the ejs condition base -->
+        <h2>NIce roll dice again.</h2>
+        <% } %>
+</body>
+</html>
+
+<%- include("includes/footer.ejs") %>
+
+

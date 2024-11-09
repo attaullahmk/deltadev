@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box model </title>
+    <style>
+        /* height  */
+        /* by default, it sets the content area height of the element  */
+        p{
+            height: 34px;
+            /* if no content in element than no height apply */
+            /* height apply only content area no rest of the element  */
+
+            /* width  */
+            /* By defulat , it sets the content area width of the elemnt  */
+
+
+            /* Border Radius  */
+            /* Used to round the corners of an element outer border edge  */
+            border:  3px solid red ;
+            border-radius: 39px;
+
+
+            /* padding  */
+
+
+
+            /* inline vs Block  */
+            /* Block Elements  */
+            /* takes up the full-width available (whole block) */
+            /* start from new line  */
+            /* div p h etc  */
+            /* Horizontal and vertical margins both work */
+            /* Always start on a new line */
+
+            /* Take up as much horizontal space as possible (the full width of the container or browser window if there is no container) */
+            /* Will respect width and height CSS properties */
+
+
+
+
+
+
+
+            /* inline Elements  */
+            /* Take up only necessary width  */
+            /* dont start from new line  */
+
+            /* Do not start on a new line */
+            /* Only use as much horizontal space as required by the content. Do not accept width and height CSS properties */
+            /* Margins will work horizontally, but not vertically */
+            /* Padding works on all sides, but the top and bottom may overlap other elements. */ 
+
+
+
+            /* display  */
+            /* it sets whether an element is treated as a block or inline element and the layout used for its children  */
+            /* if you want to hide from page to set display none */
+
+            /* in inline element only right and left padding mrgin  working
+            and top bottom overlap on other element and width and height not apply any side   */
+
+            display: inline;
+
+            /* if display inline height width padding etc property not working properly  */
+
+
+
+            /* inline-block */
+            /* it make element inline and also applay all the property which give for block level element  */
+
+
+            
+
+
+
+
+
+
+
+        }
+        h1{
+             display: inline;
+        }
+        li{
+            display: inline;
+            padding: 4px;
+            margin: 8px;
+            border: 3px solid gray;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- BOx Model in CSS -->
+    <!-- Height 
+    width
+    border
+    padding 
+    margin  -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta at odio facere exercitationem ipsa quibusdam? Provident officia excepturi, reiciendis odio nobis vero! Perspiciatis culpa excepturi modi voluptas animi aliquam sapiente!</p>
+
+    <h1>heading one
+        <p>hi to every one <b>this is me </b></p> </h1>
+    <h2> heading two </h2>
+    <span> span one </span>
+    <span> span two </span>
+
+    <div>
+        <ul>
+            <li>one </li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+    </div>
+
+    
+</body>
+</html>

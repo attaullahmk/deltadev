@@ -1,0 +1,217 @@
+where clause
+to define some conditions
+
+SELECT col1, col2 FROM table_name WHERE conditions;
+SELECT * FROM user WHERE followers >=200;
+
+
+
+lecture 2 
+where clause
+operators
+Arithmetic operators : +(addition) , -(subraction), *(multiplication), /(division), %(modulus)
+
+Comparison operators : =(equal to), !=(not equal to), >, >=, <, <=
+
+Logical operators : AND , OR , NOT, IN, BETWEEN , ALL , LIKE, ANY
+
+Bitwise operators: &(Bitwise AND), | (Bitwise OR)
+// | =  pipe 
+
+
+
+
+
+lecture 3 
+where clause
+frequently used operators
+AND (to check for both conditions to be true)
+SELECT name, age FROM user WHERE followers >=200 AND age>15;
+
+OR (to check for one of the conditions to be true)
+SELECT name, age FROM user WHERE followers >=200 OR age>15;
+
+BETWEEN (SELECT for a given range)
+SELECT name, age FROM user WHERE age BETWEEN 15 AND 17;
+
+IN (matches any value in the list)
+SELECT name, email FROM user WHERE email IN ("abc@gamil.com", "xyz@gamil.ocm");
+
+NOT (to negate the given condition)
+SELECT name, email FROM user WHERE email NOT IN ("abc@gamil.com", "xyz@gamil.ocm");
+
+
+lecture 4 
+limit clause
+sets an upper limit on number of (tuple)rows to be returned
+
+SELECT col1, col2 FROM table_name LIMIT number;
+SELECT name, email FROM user WHERE age>12 LIMIT 2;
+//print only tow which have age greater than 12
+
+
+
+lecture 5
+order by clause
+to sort in ascending (ASC) or descending order (DECS)
+
+SELECT col1, col2 FROM table_name ORDER BY col_name(s) ASC;
+SELECT name, followers FROM user ORDER BY followers ASC;
+//defult order is ASC
+
+
+
+
+
+lecture 6
+Aggregate Functions
+Aggregate Functions perform a calculattion on a set of values, and return a single value.
+
+COUNT()
+MAX()
+MIN()
+SUM()
+AVG()
+
+example: 
+SELECT MAX(marks) FROM student;
+
+
+
+
+
+lecture 7
+Group by Clause 
+Group rows that have the same values into summary rows.
+It collects data from multiple records and groups the result by one or more column.
+
+SELECT col1 , col2 FROM table_name GROUP BY cal_name(s);
+
+SELECT age, COUNT(id) 
+FROM user
+GROUP BY age;
+
+*Generally we use group by with some aggregation Function.
+
+
+
+
+
+lecture 8 
+Having Clause
+similar to where i.e applies some condition on rows.
+But it is used when we want to apply any condition after grouping.
+
+SELECT col1 , col2 FROM table_name GROUP BY cal_name(s) Having condition;
+
+SELECT age , max(followers)
+FROM user
+group BY age
+HAVING max(followers) > 200;
+
+
+*WHERE is for the table , Having is for a group 
+* grouping is necessary for HAVING 
+
+
+
+
+lecture 9
+General order
+SELECT column(s)
+FROM table_name
+WHERE condition
+Group BY columns
+HAVING condition
+ORDER BY columns ASC;
+
+
+
+
+lecture 10
+Table Queries 
+update (to update existing rows)
+
+UPDATE table_name
+SET col1 = val1, col = val2
+WHERE condition;
+
+UPDATE user
+SET followers = 600
+WHERE age = 16;
+
+// if not allowd so run this command to change database
+// this bydefult 1 so change to 0
+SET SQL_SAFE_UPDATES = 0;
+
+
+
+
+
+lecture 11
+Table Queries
+ delete (to delete existing rows)
+
+DELETE FROM table_name
+WHERE condition;
+
+DELETE FROM user
+WHERE age = 14;
+
+
+
+
+
+lecture 12 
+Table Queries
+Alter (to change the schema)
+
+ADD column
+ALTER TABLE table_name
+ADD COLUMN col_name datatype constrain;
+
+ALTER TABLE user
+ADD COLUMN city verchar(32)  defult "islamabad"
+
+
+
+
+
+DROP column
+ALTER TABLE table_name
+DROP COLUMN col_name;
+
+ALTER TABLE user
+DROP COLUMN age ;
+
+
+
+RENAME table
+ALTER TABLE table_name
+RENAME TO nre_table_name;
+
+ALTER TABLE user
+rename to instauser;
+
+
+
+change column (rename)
+Alter table table_name
+change COLUMN old-name  new-name new-datatype new-constrain;
+
+
+modify column(modify datatype/constrain)
+ALTER TABLE table_name
+modify col-name new-datatype new-constraint;
+
+
+
+
+
+lecture 13
+TRUNCATE (to delete table data)
+
+TRUNCATE table table_name;
+
+
+install workbench try qustion of 14 and 15 lecture
