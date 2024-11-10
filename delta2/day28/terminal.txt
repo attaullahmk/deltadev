@@ -1,0 +1,190 @@
+bush commnad 
+Using nano
+nano is a user-friendly text editor that's easy for beginners.
+nano filename.txt
+To save changes: Press Ctrl + O, then Enter.
+To exit: Press Ctrl + X.
+
+
+Using vim
+vim is a more powerful editor with a steeper learning curve.
+vim filename.txt
+To enter insert mode: Press i.
+To save changes: Press Esc, then type :w and press Enter.
+To exit: Press Esc, then type :q and press Enter.
+To save and exit: Press Esc, then type :wq and press Enter.
+
+open in Notepad
+Notepad filename.txt
+start chrome
+
+
+
+The terminal offers several benefits, especially for developers, system administrators, and power users. Here’s why many people prefer using the terminal for various tasks:
+1. Efficiency and Speed
+Direct command execution for faster task completion.
+Ability to automate repetitive tasks with scripts.
+2. Greater Control and Flexibility
+Advanced control over system internals.
+Highly customizable with aliases and configuration options.
+3. Remote Access
+Manage remote servers securely via SSH.
+Easier collaboration and remote management for cloud services.
+4. Resource Efficiency
+Low resource usage compared to graphical applications.
+Ideal for older systems or minimal setups.
+5. Scripting and Automation
+Shell scripting for complex, automated tasks.
+Task scheduling with tools like cron for timed execution.
+6. Cross-Platform Compatibility
+Consistent commands across Unix-based systems (Linux, macOS).
+Easier portability of code between environments.
+7. Learning and Debugging
+Helps users understand OS structure and operations.
+Powerful tools (grep, top, tail, etc.) for troubleshooting.
+8. Developer and Power User Tools
+Better version control with Git on the command line.
+Quick software installation and management with package managers.
+9. Security
+Detailed permission management and control.
+Less vulnerable to certain types of GUI exploits.
+Using the terminal can boost productivity and provide powerful tools for managing and understanding your system.
+
+
+
+
+
+window basic command 
+Displays the contents of a directory.
+dir
+
+
+Creates a new directory (folder).
+mkdir NewFolder
+
+
+Deletes an empty directory.
+rmdir OldFolder
+
+
+To delete a folder and its contents:
+rmdir /S /Q OldFolder
+/S removes all files and subdirectories.
+/Q suppresses confirmation prompts.
+
+
+Deletes a specified file.
+del filename.txt
+
+
+To delete all files in a folder:
+del /Q *
+/Q suppresses the confirmation prompt.
+
+
+
+Copies files from one location to another.
+copy C:\source\file.txt C:\destination\
+
+
+6. copy – Copy Files
+Copies files from one location to another.
+copy C:\source\file.txt C:\destination\
+
+Copy multiple files:
+copy *.txt C:\destination\
+
+
+7. move – Move Files
+Moves files from one location to another.
+move C:\source\file.txt C:\destination\
+
+
+
+8. ren – Rename Files or Directories
+Renames a file or directory.
+ren oldname.txt newname.txt
+
+
+
+9. cls – Clear Screen
+Clears all text in the Command Prompt window.
+cls
+
+
+
+10. ipconfig – Display IP Configuration
+Shows network information, including IP address and subnet mask.
+ipconfig
+
+
+To display detailed information:
+ipconfig /all
+
+
+11. ping – Test Network Connection
+Tests the connection to a specific IP address or domain.
+ping www.google.com
+
+
+12. shutdown – Shut Down or Restart the Computer
+To shut down:
+shutdown /s /t 0
+/s for shutdown.
+/t 0 sets the timer to 0 seconds.
+To restart:
+shutdown /r /t 0
+
+
+
+13. tasklist – List Running Processes
+Shows a list of currently running processes.
+tasklist
+
+14. taskkill – Terminate a Process
+Ends a specified process.
+taskkill /IM notepad.exe /F
+/IM specifies the image name of the process.
+/F forces the process to terminate.
+
+
+15. echo – Display Messages or Variables
+Prints text or variables to the screen.
+
+echo Hello, World!
+
+16. type – Display File Contents
+Shows the contents of a text file.
+type filename.txt
+
+17. find – Search for a String in Files
+Searches for a specific text in a file.
+find "search_text" filename.txt
+Select-String -Path "lab.py" -Pattern "one"
+
+Select-String: Searches for text in a file or input.
+-Path: Specifies the file you want to search in.
+-Pattern: Specifies the string you want to find.
+
+
+
+18. systeminfo – Display System Information
+Shows detailed information about the computer.
+systeminfo
+
+
+19. chkdsk – Check Disk
+Checks and repairs file system errors on a disk.
+chkdsk C:
+
+20. help – Get Help on Commands
+Displays a list of available commands or help for a specific command.
+help
+Help for a specific command:
+help dir
+
+
+
+These commands are foundational for navigating and managing files, folders, and system settings directly from the Windows command line.
+
+

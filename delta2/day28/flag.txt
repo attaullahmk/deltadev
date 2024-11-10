@@ -1,0 +1,22 @@
+In the context of command-line interfaces (CLI), flags (also called options or switches) are arguments passed to a command to modify its behavior or provide additional functionality. Flags are typically prefixed with a hyphen (-) or double hyphen (--), depending on whether they are short or long flags.
+
+1. ls (List Directory Contents)
+-l: Long listing format, shows detailed information.
+-a: Show all files, including hidden files.
+ls -la
+This command lists all files (including hidden ones) with detailed information.
+
+2. git (Git Version Control)
+git status
+
+-s: Short status output.
+-b: Show branch information.
+
+git status -sb
+This command shows the status in a short format with branch information.
+git commit
+
+-m: Commit with a message.
+--amend: Amend the previous commit.
+
+git commit -m "Updated readme file"
