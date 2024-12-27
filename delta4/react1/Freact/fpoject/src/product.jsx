@@ -1,6 +1,6 @@
 import "./product.css";
 
-
+// 2 2 
 // function Product(props) {
 //     console.log(props);
     
@@ -16,7 +16,8 @@ import "./product.css";
 // better way to implement as the above with obj destructuring
 // function Product({ title, price, featurs, obj1 }) {
 //   console.log(featurs);
-//   // let list = featurs.map((feature) => <li>{feature}</li>) // this give erro so correct with Add a Fallback (|| [])
+//   // let list = featurs.map((feature) => <li>{feature}</li>)
+// this give erro so correct with Add a Fallback (|| [])
 //   let list = (featurs || []).map((feature, index) => (
 //     <li key={index}>{feature}</li>
 //   ));
@@ -82,6 +83,7 @@ function Product({ title, price}) {
     
     
     //  2 5
+    
     // to color on the basis of the condition 
     // best to store in variable which are repeat 
   let isDiscount = price >= 1000;

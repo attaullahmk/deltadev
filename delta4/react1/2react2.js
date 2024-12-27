@@ -22,6 +22,8 @@ export default function Product({ title, price }) {
 
 
 
+
+
 // lecture 2
 // Passing Arrays to Props
 // features = { ["fast", "reliable"]};
@@ -29,23 +31,34 @@ export default function Product({ title, price }) {
 
 
 
+
+
+
+
+
 // lecture 3
 // Rendering Array
 // not send array as array  -> arry pass as  element mean the array element close in li tage
-// best way to emplement with
+// best way to emplement with map function when recive in the component implementation time and some change as like enclose in li tag 
+
+
+
 
 
 //lecture 4
 // conditionals
 // adding elements on the basis of some condition
 {
-  price >= 1000? <p>Discount : 5%</p>: null
+  price >= 1000 ? <p>Discount : 5%</p> : null;
 }
 
-// or 
+// or
+
 {
-  price >= 1000 && <p>Discount : 5%</p>
+  price >= 1000 && <p>Discount : 5%</p>;
 }
+// for end condition first check one if ture than next will be checked if ture ..
+
 
 
 
@@ -56,17 +69,11 @@ export default function Product({ title, price }) {
 
 
 
-
 // lecture 6
 // Activity
 // show a hello message to the user in different colors.
 // pass 2 values as props : userName $ textColor
-
-
-
-
-
-
+// explain in msgBox.jsx
 
 // lecture 7
 // intall react developer tools
@@ -74,9 +81,7 @@ export default function Product({ title, price }) {
 
 
 
-// activity to create amozon cards show title description price > old and new 
 
 
-
-
-
+// this one must try to create itself 
+// activity to create amozon cards show title description price > old and new
