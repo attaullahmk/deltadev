@@ -5,7 +5,7 @@ const app = express();
 
 // console.dir(app); // to see method and property of app object 
 
-let port = 3000;  //8080 this port use for custom server
+let port = 3000;  //3000 this port use for custom server
 // some port alloted for some specific task 
 
 
