@@ -17,9 +17,9 @@ app.listen(port, () => {
 app.get("/register", (req, res) => {
     let { user, password } = req.query;
     console.log(password);
-    res.send(`standard get response Welcome ${user}`);
+    // res.send(`standard get response Welcome ${user}`);
 
-    // if try to send password clint give error
+    
     // res.send(`standard get response Welcome ${password}`);
 })
 
@@ -39,8 +39,9 @@ app.post("/register", (req, res) => {
     // app.use(express.urlencoded({ extended: true }));
     // now do same  work as get 
     console.log(req.body);
-     let { user, password } = req.body;
-     res.send(`standard get response Welcome ${user}`);
+     let { user, password } = red.body;
+    //  res.send(`standard get response Welcome ${user}`);
+     res.send(`standard get response Welcome ${password}`);
 });
 
 

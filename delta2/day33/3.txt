@@ -1,0 +1,117 @@
+
+### Object-Oriented Programming in JavaScript
+- Purpose: To structure and organize code for better reusability and maintainability.
+- Core Concepts:
+  - Prototypes: Mechanism for inheritance between objects.
+  - `new` Operator: Creates new instances of objects.
+  - Constructors: Functions used to initialize objects.
+  - Classes: ES6 feature to define templates for creating objects.
+  - Keywords: `extends`, `super` (used in class-based inheritance).
+
+---
+
+### Object Repetition Problem
+When creating objects directly, like this:
+
+```javascript
+const stu1 = { name: "Adnan", age: 23, marks: 89 };
+const stu2 = { name: "Iqrar", age: 13, marks: 89 };
+const stu3 = { name: "Framn", age: 22, marks: 88 };
+```
+
+Problem: The code repeats structure for every object.
+
+Solution: Use templates (like constructors or classes) to avoid redundancy.
+
+---
+
+### Prototypes in JavaScript
+Definition:  
+Prototypes are the mechanism by which JavaScript objects inherit features (methods and properties) from one another. Objects share a "template" rather than duplicating functionality.
+
+- Prototype Chain:  
+  Every object has a `prototype`. This forms a chain where:
+  - Child → Parent → Grandparent → null  
+    (Ends when the prototype is `null`).
+
+---
+
+### How Prototypes Work
+1. Array Example:  
+   Arrays inherit methods like `push`, `pop`, and `indexOf` from `Array.prototype`.
+
+   ```javascript
+   let arr = [1, 3, 4];
+   console.log(arr.__proto__ === Array.prototype); // true
+   console.log(Array.prototype.__proto__ === Object.prototype); // true
+   ```
+
+2. Adding Methods to an Object:
+   ```javascript
+   arr.sayHello = () => {
+       console.log("Hi everyone!");
+   };
+   arr.sayHello(); // Output: Hi everyone!
+   ```
+
+   - `arr.sayHello` works only for `arr`.
+   - Other arrays won't inherit `sayHello` unless it's added to the prototype.
+
+---
+
+### Overriding Prototype Methods
+You can change the default behavior of methods like `push`:
+
+```javascript
+arr.__proto__.push = (n) => {
+    console.log(`Pushing number: ${n}`);
+};
+
+arr.push(4); // Output: Pushing number: 4
+```
+
+Caution: This affects all arrays, as the method is on the prototype.
+
+---
+
+### Memory Efficiency with Prototypes
+- Defining methods individually for objects creates separate memory spaces:
+  
+  ```javascript
+  arr.sayHello = () => { console.log("Hi!"); };
+  arr2.sayHello = () => { console.log("Hi!"); };
+
+  console.log(arr.sayHello === arr2.sayHello); // false (different functions in memory)
+  ```
+
+- To share a single method:
+  ```javascript
+  const sharedFunction = () => { console.log("Hi!"); };
+
+  arr.sayHello = sharedFunction;
+  arr2.sayHello = sharedFunction;
+
+  console.log(arr.sayHello === arr2.sayHello); // true (same function in memory)
+  ```
+
+---
+
+### Prototype Behavior
+- Prototype Methods Are Shared:  
+  Methods like `toUpperCase` in strings or `push` in arrays are shared via prototypes.
+
+  ```javascript
+  console.log("abc".toUpperCase === "xyz".toUpperCase); // true
+  ```
+
+  Both strings reference the same `toUpperCase` method in `String.prototype`.
+
+---
+
+### Summary
+1. Objects in JavaScript inherit features through prototypes, avoiding duplication.
+2. Prototype Chain ensures objects inherit properties and methods from ancestors.
+3. Memory Efficiency: Shared methods in prototypes save memory compared to individual method definitions.
+4. Class Syntax (introduced in ES6) provides a cleaner way to work with inheritance and prototypes.
+
+If you want more examples or further clarification, feel free to ask!

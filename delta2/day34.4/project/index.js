@@ -46,8 +46,9 @@ let posts = [
 
 
 
+
 app.get("/", (req, res) => {
-  res.send("server woriking well! ");
+  res.send("server working well! ");
 });
 
 
@@ -58,7 +59,7 @@ app.get("/", (req, res) => {
 app.get("/posts", (req, res) => {
   res.render("index.ejs", { posts });
   
-  // res.send(posts) //yoou can send direct array 
+  // res.send(posts) //you can send direct array 
 })
 
 
@@ -77,7 +78,7 @@ app.post("/posts", (req, res) => {
   let { username, content } = req.body;
   let id = uuidv4(); // lecture 8
   posts.push({ id, username, content });
-  // res.send("post requat is working ");
+  // res.send("post requist is working ");
 
 
 
@@ -137,7 +138,7 @@ app.get("/posts/:id", (req, res) => {
 // lecture 9
 // Implement : PATCH /posts/:id
 // update Route
-// Pactch  /posts/:id  to update specific post
+// Patch  /posts/:id  to update specific post
 
 
 // this only work on hoppscutch
@@ -186,7 +187,7 @@ app.delete("/posts/:id", (req, res) => {
   let { id } = req.params;
   // let post = posts.find((p) => id === p.id);
   posts = posts.filter((p) => id !== p.id);
-  // filter method use  ot all the message that id not equal to id !=p.id
+  // filter method use  ot all the message that id not equal to id !==p.id
   // res.send("delet is succes");
   res.redirect("/posts");
 })
@@ -195,7 +196,7 @@ app.delete("/posts/:id", (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(` lesting in prot ${port}`);
+  console.log(` lesting in prot http://localhost:${port}`);
 });
 
 

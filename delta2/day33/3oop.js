@@ -63,7 +63,7 @@ arr.__proto__.push = (n) => {
     console.log("pushing number : ", n);
 };
 arr.push(4); // than it not work for as noraml push work for array
-arr2.push(3)// change definition fo push now push not work 
+arr2.push(3)// change definition for push now push not work 
 console.log(arr);
 console.log(arr2);
 

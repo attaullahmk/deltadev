@@ -6,6 +6,7 @@
     <title>selector</title>
     <style>
         /* first two not use  */
+
         /* lecture 3 */
         /* universal selector  */
         /* universal selector apply all the element in the page  */
@@ -13,6 +14,8 @@
         *{
             margin:  0px;
         }
+
+
 
         /* leacture 4  */
         /* Element selector  */
@@ -48,7 +51,7 @@
 
         /* lecutre 10  */
         /* Child Combinator  */
-        /* eg  selects all buttons which are direct children of spans  */
+        /* eg  selects all buttons which are direct children of div  */
 
         div >p{
             background-color: blue;
@@ -68,13 +71,19 @@
             color: rgb(165, 42, 42);
         }
 
+     /* lecture 12  practice qs */
 
+
+
+
+
+     /* lecture 13 */
         /* Pseudo Class  */
         /* a keyword added to a selector that specifies a special state of the selected element(s) */
 
         /* :hover
         :active
-        :checked
+        :checked // this one must try for radio button
         :nth-of-type() */
 
         /* this is very amizing  */
@@ -85,8 +94,8 @@
 
 
         /* pseudo Element  */
-        /* A keyword added to a selector that lets you style a specific of the selected element (s)  */
-
+        /* A keyword added to a selector that lets you style a specific part of the selected element (s)  */
+       /* alos write in single colon : but most of the developer use the double :: */
         /* ::first-letter
         ::first-line
         ::selection */
@@ -115,7 +124,12 @@
         /* what is specificity */
         /* specificity is an algorithm that calculate the weight that is applid to a a given CSS declaration.  */
         /* it mean target element with different selector which one property will be applid */
+        /* specify  mean for specific property  */
 
+
+        /* if specificity same for elements tha use the casecading mean last one will be apply */
+
+       /* remember 👇 */
         /* id> class, attribute and pesudo-class > element and pesude-elemnt  */
 
         /* more selcetor use best > less slector  */
@@ -158,12 +172,19 @@
         /* width height border etc not inherit */
         
 
+        /* if the prarent element of input or button change the bgcolor or any other property the not change for botton and input mean the not inheret its property from parent */
+
+        /* if want to inhenrt write as 👇 */
+        input{
+            background-color: inherit;
+        }
+
+        /* if the elemnt not have self property the try to inhernt it from parent element */
 
 
 
 
-
-
+/* google not inherite property  */
 
 
 

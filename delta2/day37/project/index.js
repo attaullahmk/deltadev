@@ -8,8 +8,10 @@ const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
-app.set("views engine", "ejs");
+app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
+
 
 
 
@@ -41,30 +43,28 @@ const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   database: "iuser",
-  password: "1234",
+  // password: "1234",
 });
 
 
 
-// google how to use sql from commandline in vs code
-// C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
-// the above command run than enter password than access to db
-// just for checking connection build with database (youtube vedio)
-
-
 // only for check the connection with database
-// connection.connect((err) => {
-//   if (err) throw err;
-//   console.log("connected");
-// });
+connection.connect((err) => {
+  if (err) throw err;
+  console.log("connected");
+});
+
+
 
 // query  aslo write in variable
-// let q = "SHOW TABLES"; // best practice
+// let q = "SHOW TABLES"; // best practice to write in variable 
+
+// to prevent server from crush to use try and catch 
 
 // try {
 // connection.query("SHOW TABLES", (err, result) => {
 //   if (err) throw err;
-//   console.log(result); // result actual an array
+//   console.log(result); // result actual an array.. mean table show in array in db
 //   // console.log(result.length); // show the lenght of array
 // });
 // } catch (err) {
@@ -75,6 +75,7 @@ const connection = mysql.createConnection({
 
 // if one connection is establish the start so to stop connection write follwing commnand to stop database changing
 // connection.end();  //if connection is end than not work below query
+
 
 
 
@@ -149,14 +150,14 @@ const connection = mysql.createConnection({
 
 // lecture 6
 //enter multiple data it a time
-   let getRandomUser = () => {
-     return [
-      faker.string.uuid(),
-       faker.internet.userName(),
-       faker.internet.email(),
-       faker.internet.password(),
-     ];
-};
+//    let getRandomUser = () => {
+//      return [
+//       faker.string.uuid(),
+//        faker.internet.userName(),
+//        faker.internet.email(),
+//        faker.internet.password(),
+//      ];
+// };
 
 // let q = "INSERT INTO user(id, username, email, password) values ?";
 // let data = [];
@@ -212,16 +213,18 @@ app.get("/", (req, res) => {
       // console.log(result);
       // result[0] = give obj {"count(*)" : 1115} so use the key count(*)
       let count = result[0]["count(*)"];
-      // lecture 9 home page
+
+      // lecture 9 home page to show result in home.ejs 
       res.render("home.ejs", { count });
     });
   } catch (err) {
     console.log(err);
     res.send("some err in database");
   }
+  
   // res.send('working');
 });
-
+ 
 
 
 
@@ -329,8 +332,9 @@ app.patch("/user/:id", (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(` lesting in prot ${port}`);
+  console.log(`Server is running at http://localhost:${port}`);
 });
+
 
 
 
@@ -339,4 +343,58 @@ app.listen(port, () => {
 
 // creat form to add a new user to the database
 // Create Form to Delete a user from DataBase if they enter correct email id and password.
+// Homework Tasks
+
+// Create form to add a new user to the database
+app.get("/user/new", (req, res) => {
+  res.render("new.ejs");
+
+});
+
+app.post("/user", (req, res) => {
+  let { id, username, email, password } = req.body;
+  let q = "INSERT INTO user(id, username, email, password) VALUES (?, ?, ?, ?)";
+  let user = [id, username, email, password];
+
+  try {
+    connection.query(q, user, (err, result) => {
+      if (err) throw err;
+      res.redirect("/user");
+    });
+  } catch (err) {
+    console.log(err);
+    res.send("some error occurred");
+  }
+});
+
+// Create form to delete a user from the database if they enter correct email id and password
+app.get("/user/delete", (req, res) => {
+  res.render("delete.ejs");
+});
+
+app.delete("/user/:id", (req, res) => {
+  let { id } = req.params;
+  let { email, password } = req.body;
+  let q = `SELECT * FROM user WHERE id ='${id}' AND email ='${email}'`;
+
+  try {
+    connection.query(q, (err, result) => {
+      if (err) throw err;
+      let user = result[0];
+
+      if (!user || user.password !== password) {
+        res.send("wrong email or password");
+      } else {
+        let q2 = `DELETE FROM user WHERE id ='${id}'`;
+        connection.query(q2, (err, result) => {
+          if (err) throw err;
+          res.redirect("/user");
+        });
+      }
+    });
+  } catch (err) {
+    console.log(err);
+    res.send("some error occurred");
+  }
+});
 

@@ -17,7 +17,7 @@
 // GET : retrives resources.
 // POST : submits new data to the server
 // PUT : update existing data
-// PATCH : udate existing data partially
+// PATCH : update existing data partially
 // DELETE: removes data
 
 // resource (tweet, user )-> on which crud opretion()
@@ -29,10 +29,10 @@
 // lecture 3
 // Creating RESTful API
 // GET  /posts        to get data for all posts(index rout(main))
-//POST  / posts        to add a new post (create)
+// POST  / posts        to add a new post (create)
 // GET /posts/:id      to get one post (using id)( view rout)
 // PATCH (put also write)    /posts/:id    to update specific post(update)
-// DELETE  /posts/:id     to delete specific post(destroy rooot in rest term)
+// DELETE  /posts/:id     to delete specific post(destroy root in rest term)
 
 
 
@@ -73,6 +73,9 @@
 // implement : GET /post/:id
 // show Route
 // GET /posts/:id    to get one post (using id )
+
+
+
 
 
 // lecture 8

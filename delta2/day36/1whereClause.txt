@@ -79,7 +79,6 @@ SELECT MAX(marks) FROM student;
 
 
 
-
 lecture 7
 Group by Clause 
 Group rows that have the same values into summary rows.

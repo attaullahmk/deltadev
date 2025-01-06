@@ -3,11 +3,13 @@
 // to generate fake data
 // read the faker documentation 
 
+const { log } = require("util");
 
 
 
 
-// userid  username  email password 
+
+// user_id  username  email password 
 let getUser = () => {
     return [
         faker.datatype.uuid(),
@@ -43,9 +45,22 @@ let getUser = () => {
 // lecture 3
 //this use for abslute path 
 // THIS  FOR COMMAND LINE
-// C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
-// the above command run than enter password than access to db
-// if set if create path in enviroment variable as above the simple write mysql -u root -p form cmd ... 
+// 
+
+
+// cd D:\xampp\mysql\bin // open in cmd than write "xampp_start.exe" if xamp not start >> than mysql -u root -p
+// -u root specifies that you're logging in as the root user.
+// -p tells MySQL to prompt you for a password (if you set one for root).
+// If there is no password set, simply press Enter after typing the command.
+
+// run some command 
+// SHOW DATABASES;
+// if use any database write "use db-name;"
+//SELECT username , id , password
+// FROM user  
+// WHERE email = 'Ellie_Grimes63@hotmail.com';
+
+
 
 // create shema.sql (sql file)
 // open sql CLI // write follwing command
@@ -64,7 +79,8 @@ let getUser = () => {
 
 
 //-- you can run from sql terminal this file using following command
-//--  source E:\jcode\delta2\day37\project\schema.sql
+// open as for CLI  and than run as source file_path
+//--  source D:\code\deltadev\delta2\day37\project\schema.sql
 
 
 
@@ -93,6 +109,7 @@ let getUser = () => {
 // insert user
 // using placehoders 
 //google palceholders in sql ?
+// read more about mysql2 documentation for placeholders
 let user = ["123@ach", "randla", "rands;lf@gmail.com", "passd@123"]
 
 connection.query(`insert into user (useid , uesername, email, passward) values(?,?,?,?)`,
@@ -153,6 +170,7 @@ app.get("/", (req, res) => {
         connection.query(q, (err, result) => {
             if (err) throw err;
             // to extract number from obj array than obj 
+            // console.log(result); // print as array 
             let count = result[0]["count(*)"];
             res.render("home.ejs", { count });
         });
